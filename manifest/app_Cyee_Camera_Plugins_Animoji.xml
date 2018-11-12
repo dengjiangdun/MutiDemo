@@ -1,0 +1,6 @@
+<manifest>
+  <remote fetch="ssh://18.8.3.13" name="origin" review="http://18.8.3.13:8080" />
+  <default remote="origin" revision="Cyee_Camera_Plugins_Animoji" sync-j="4" />
+<project name="app/Cyee_Camera_Plugins" path="Cyee_Camera_Plugins" revision="refs/heads/Cyee_Camera_Plugins_Animoji" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins/code/res" revision="refs/heads/Cyee_Camera_Plugins_Animoji" />
+</manifest>

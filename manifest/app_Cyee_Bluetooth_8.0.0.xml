@@ -1,0 +1,6 @@
+<manifest>
+  <remote fetch="ssh://18.8.3.13" name="origin" review="http://18.8.3.13:8080" />
+  <default remote="origin" revision="Cyee_Bluetooth_8.0.0" sync-j="4" />
+<project name="app/Cyee_Bluetooth" path="Cyee_Bluetooth" revision="refs/heads/Cyee_Bluetooth_8.0.0" />
+<project name="app/Cyee_Bluetooth/code/res" path="Cyee_Bluetooth/code/res" revision="refs/heads/master" />
+</manifest>

@@ -1,0 +1,6 @@
+<manifest>
+  <remote fetch="ssh://18.8.3.13" name="origin" review="http://18.8.3.13:8080" />
+  <default remote="origin" revision="master" sync-j="4" />
+  <project name="Cyee_Widget" path="Cyee_Widget" revision="Cyee_Widget_9.0" />
+  <project name="Cyee_WidgetResTranslation" path="Cyee_Widget/code" revision="master" />
+</manifest>

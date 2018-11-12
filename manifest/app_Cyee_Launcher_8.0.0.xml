@@ -1,0 +1,6 @@
+<manifest>
+  <remote fetch="ssh://18.8.3.13" name="origin" review="http://18.8.3.13:8080" />
+  <default remote="origin" revision="Cyee_Launcher_8.0.0" sync-j="4" />
+<project name="app/Cyee_Launcher" path="Cyee_Launcher" revision="refs/heads/Cyee_Launcher_8.0.0" />
+<project name="app/Cyee_Launcher/code/res" path="Cyee_Launcher/code/res" revision="refs/heads/Cyee_Launcher_8.0.0" />
+</manifest>

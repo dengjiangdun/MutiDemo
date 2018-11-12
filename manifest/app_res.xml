@@ -1,0 +1,52 @@
+<manifest>
+  <remote fetch="ssh://18.8.3.13" name="origin" review="http://18.8.3.13:8080" />
+  <default remote="origin" revision="master" sync-j="4" />
+<project name="app/Cyee_AppClone/code/res" path="Cyee_AppClone/code/res" revision="refs/heads/master" />
+<project name="app/CY_LongScreenShot/code/res" path="CY_LongScreenShot/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Bluetooth/code/res" path="Cyee_Bluetooth/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Calculator/code/res" path="Cyee_Calculator/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Calendar/code/res" path="Cyee_Calendar/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Changer/code/res" path="Cyee_Changer/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Compass/code/res" path="Cyee_Compass/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Contacts/code/res" path="Cyee_Contacts/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_DataClone/code/res" path="Cyee_DataClone/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_DeskClock/code/res" path="Cyee_DeskClock/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_FileManager/code/res" path="Cyee_FileManager/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_FlashLight/code/res" path="Cyee_FlashLight/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_FloatingTouch/code/res" path="Cyee_FloatingTouch/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_FaceLock/code/res" path="Cyee_FaceLock/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Gallery2/code/res" path="Cyee_Gallery2/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Gallery2/code/mtkgallery/res" path="Cyee_Gallery2/code/mtkgallery/res" revision="refs/heads/master" />
+<project name="app/Cyee_Launcher/code/res" path="Cyee_Launcher/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Mms/code/res" path="Cyee_Mms/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Music/code/res" path="Cyee_Music/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Note/code/src/app/src/main/res" path="Cyee_Note/code/src/app/src/main/res" revision="refs/heads/master" />
+<project name="app/Cyee_Ota/code/res" path="Cyee_Ota/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_RingTone/code/res" path="Cyee_RingTone/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Search/code/res" path="Cyee_Search/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Settings/code/res" path="Cyee_Settings/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_SettingsProvider/code/res" path="Cyee_SettingsProvider/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_SoundRecorder/code/res" path="Cyee_SoundRecorder/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_StoryLocker/code/res" path="Cyee_StoryLocker/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Synchronizer/code/res" path="Cyee_Synchronizer/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_SystemManager/powersavelauncher/res" path="Cyee_SystemManager/code/powersavelauncher/res" revision="refs/heads/master" />
+<project name="app/Cyee_Video/code/res" path="Cyee_Video/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Weather/code/res" path="Cyee_Weather/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Wifi_Settings/code/res" path="Cyee_Wifi_Settings/code/res" revision="refs/heads/master" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_Gif/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_Gif" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_CardScan/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_CardScan" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_FaceBeauty/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_FaceBeauty" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_HDR/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_HDR" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_Night/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_Night" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_Panorama/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_Panorama" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_PicNote/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_PicNote" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_Polaroid/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_Polaroid" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_ProSetting/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_ProSetting" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_Scan/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_Scan" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_SelfiePanorama/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_SelfiePanorama" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_SlowMotion/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_SlowMotion" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_TextEditor/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_TextEditor" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_TimeLapse/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_TimeLapse" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins_Translation/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_Translation" />
+<project name="Cyee_WidgetResTranslation" path="Cyee_WidgetResTranslation" revision="refs/heads/master" />
+</manifest>

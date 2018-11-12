@@ -1,0 +1,6 @@
+<manifest>
+  <remote fetch="ssh://18.8.3.13" name="origin" review="http://18.8.3.13:8080" />
+  <default remote="origin" revision="Cyee_DeskClock_8.0.0" sync-j="4" />
+<project name="app/Cyee_DeskClock" path="Cyee_DeskClock" revision="refs/heads/Cyee_DeskClock_8.0.0" />
+<project name="app/Cyee_DeskClock/code/res" path="Cyee_DeskClock/code/res" revision="refs/heads/Cyee_DeskClock_res_8.1.0_8.0.0" />
+</manifest>

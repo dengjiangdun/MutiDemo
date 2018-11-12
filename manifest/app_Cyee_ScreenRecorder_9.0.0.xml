@@ -1,0 +1,6 @@
+<manifest>
+  <remote fetch="ssh://18.8.3.13" name="origin" review="http://18.8.3.13:8080" />
+  <default remote="origin" revision="Cyee_ScreenRecorder_9.0.0" sync-j="4" />
+<project name="app/Cyee_ScreenRecorder" path="Cyee_ScreenRecorder" />
+<project name="app/Cyee_ScreenRecorder/code/res" path="Cyee_ScreenRecorder/code/res" revision="refs/heads/master" />
+</manifest>

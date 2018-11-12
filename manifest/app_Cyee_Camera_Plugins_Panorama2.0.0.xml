@@ -1,0 +1,6 @@
+<manifest>
+  <remote fetch="ssh://18.8.3.13" name="origin" review="http://18.8.3.13:8080" />
+  <default remote="origin" revision="branch_Cyee_Camera_Plugins_Panorama2.0.0" sync-j="4" />
+<project name="app/Cyee_Camera_Plugins" path="Cyee_Camera_Plugins" revision="refs/heads/branch_Cyee_Camera_Plugins_Panorama2.0.0" />
+<project name="app/Cyee_Camera_Plugins/code/res" path="Cyee_Camera_Plugins/code/res" revision="refs/heads/branch_Cyee_Camera_Plugins_Panorama" />
+</manifest>
