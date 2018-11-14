@@ -28,5 +28,5 @@
             android:value="${UMENG_CHANNEL_VALUE}"/>-->
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+   <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

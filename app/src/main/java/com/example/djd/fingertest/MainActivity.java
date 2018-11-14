@@ -16,6 +16,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyProperties;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,6 +44,15 @@ import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import okio.BufferedSink;
 
 public class MainActivity extends AppCompatActivity {
     private static int sBinderCount = 0;
@@ -118,6 +128,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         testRxJava();
+        testOkhttp();
+        testRxJavaPost();
       //  Debug.stopMethodTracing();
     }
 
@@ -313,6 +325,67 @@ public class MainActivity extends AppCompatActivity {
 
 
         novel.subscribeOn(Schedulers.single()).observeOn(AndroidSchedulers.mainThread()).subscribe(observer);
+    }
+
+
+    private void testOkhttp() {
+        Request request  = new Request.Builder().url(" http://www.publicobject.com/helloworld.txt").get().build();
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new LogIntercepter()).build();
+        Call call  = client.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Log.i(TAG,"onResponse"+response.body().string());
+            }
+        });
+    }
+
+    class LogIntercepter implements Interceptor{
+        @Override
+        public Response intercept(Chain chain) throws IOException {
+            Request request = chain.request();
+            Log.i(TAG, "intercept method"+request.method()+"header"+request.headers()+"url"+request.url());
+            Response response = chain.proceed(request);
+            Log.i(TAG, "intercept response body"+response.body()+"\n"+response.headers()+"url"+response.request().url());
+            return response;
+        }
+    }
+
+
+    private void testRxJavaPost() {
+        RequestBody requestBody = new RequestBody() {
+            @Nullable
+            @Override
+            public MediaType contentType() {
+                return MediaType.parse("text/x-markdown; charset=utf-8text/x-markdown; charset=utf-8");
+            }
+
+            @Override
+            public void writeTo(BufferedSink sink) throws IOException {
+                sink.writeUtf8("hello word");
+            }
+        };
+
+        final Request request = new Request.Builder().url("https://api.github.com/markdown/raw").
+                post(requestBody).build();
+
+        OkHttpClient client = new OkHttpClient();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Log.i(TAG,"post onResponse \n"+response.body().string());
+            }
+        });
     }
 
 
