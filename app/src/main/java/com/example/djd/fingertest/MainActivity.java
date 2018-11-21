@@ -17,11 +17,17 @@ import android.os.Message;
 import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyProperties;
 import android.support.annotation.Nullable;
+import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
+import android.util.AttributeSet;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.djd.fingertest.sql.SecondActivity;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -71,6 +77,28 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTvShow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        LayoutInflaterCompat.setFactory2(LayoutInflater.from(this), new LayoutInflater.Factory2() {
+            @Override
+            public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
+                AppCompatDelegate appCompatDelegate = getDelegate();
+                View view = appCompatDelegate.createView(parent, name,context, attrs);
+
+                if (view != null && view instanceof TextView) {
+                    ((TextView)view).setText("Hello world");
+                }
+
+                return view;
+            }
+
+            @Override
+            public View onCreateView(String name, Context context, AttributeSet attrs) {
+
+                return null;
+            }
+        });
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
        // Debug.startMethodTracing();
@@ -97,8 +125,10 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.tv_bind_service).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bindService();
-                testHandler();
+                //bindService();
+                //testHandler();
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -358,6 +388,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void testRxJavaPost() {
+        if (Build.VERSION.SDK_INT > 29) {
+
+        }
         RequestBody requestBody = new RequestBody() {
             @Nullable
             @Override
@@ -386,6 +419,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG,"post onResponse \n"+response.body().string());
             }
         });
+
+
     }
 
 

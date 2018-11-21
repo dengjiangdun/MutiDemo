@@ -18,6 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".sql.SecondActivity"/>
         <receiver android:name=".AlarmRecevier">
             <intent-filter>
                 <action android:name="intent_alarm_log"/>

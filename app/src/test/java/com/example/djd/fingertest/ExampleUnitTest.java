@@ -12,6 +12,17 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+        assertEquals(6, 2 + 2);
+
     }
+
+    @Test(timeout = 2)
+    public void testTimeOut(){
+        int i = 100;
+        while (i >0) {
+            System.out.println("i = "+i);
+            i--;
+        }
+    }
+
 }
