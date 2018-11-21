@@ -2,14 +2,21 @@ package com.example.djd.fingertest.sql;
 
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.djd.fingertest.R;
 import com.example.djd.fingertest.Triangle;
@@ -29,6 +36,8 @@ public class SecondActivity extends Activity implements GLSurfaceView.Renderer {
     private static final String TAG = "SecondActivity";
     private GLSurfaceView mGLV;
     private Triangle triangle;
+    private LocalBroadcastManager mLocalBroadcastManager;
+    private LocalBrocastReciver mLocalBrocastReciver;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +54,8 @@ public class SecondActivity extends Activity implements GLSurfaceView.Renderer {
         findViewById(R.id.btn_query).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent("com.android.johndon");
+                mLocalBroadcastManager.sendBroadcast(intent);
             }
         });
 
@@ -53,6 +63,10 @@ public class SecondActivity extends Activity implements GLSurfaceView.Renderer {
 
         mGLV.setRenderer(this);
         //myDatabaseHepler = new MyDatabaseHepler(this,"demo.db", null, 1);
+        mLocalBroadcastManager =  LocalBroadcastManager.getInstance(this);
+        mLocalBrocastReciver = new LocalBrocastReciver();
+        IntentFilter intentFilter = new IntentFilter("com.android.johndon");
+        mLocalBroadcastManager.registerReceiver(mLocalBrocastReciver, intentFilter);
     }
 
 
@@ -93,4 +107,22 @@ public class SecondActivity extends Activity implements GLSurfaceView.Renderer {
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
         triangle.draw();
     }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        DownloadManager
+        mLocalBroadcastManager.unregisterReceiver(mLocalBrocastReciver);
+    }
+
+
+    class LocalBrocastReciver extends BroadcastReceiver{
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            Toast.makeText(context, "local reciver"+action, Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }
