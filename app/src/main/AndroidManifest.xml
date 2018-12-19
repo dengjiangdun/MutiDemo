@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".sql.SecondActivity"/>
+        <activity android:name=".WebViewActivitiy"/>
         <receiver android:name=".AlarmRecevier">
             <intent-filter>
                 <action android:name="intent_alarm_log"/>

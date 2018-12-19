@@ -1,6 +1,12 @@
 package com.example.djd.fingertest;
 
+import android.content.Context;
+
 import org.junit.Test;
+import org.mockito.Mock;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 import static org.junit.Assert.*;
 
@@ -10,7 +16,7 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    @Test
+   /* @Test
     public void addition_isCorrect() throws Exception {
         assertEquals(6, 2 + 2);
 
@@ -23,6 +29,16 @@ public class ExampleUnitTest {
             System.out.println("i = "+i);
             i--;
         }
+    }*/
+    @Mock
+    Context mContext;
+
+    @Test
+    public void test_is(){
+        StringBuilder sb = new StringBuilder();
+        System.out.println("mathtest"+Math.round(12.5));
+        System.out.println("mathtest"+Math.round(-12.5));
     }
+
 
 }

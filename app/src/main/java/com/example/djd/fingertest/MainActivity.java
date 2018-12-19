@@ -33,11 +33,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.UnrecoverableKeyException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
@@ -87,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 if (view != null && view instanceof TextView) {
                     ((TextView)view).setText("Hello world");
                 }
-
+                   // getSharedPreferences()
                 return view;
             }
 
@@ -106,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
             //initKey();
             //initCiper();
         }
+
+        System.out.println("mathtest"+Math.round(12.5));
+        System.out.println("mathtest"+Math.round(-12.5));
         mScon = new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName name, IBinder service) {
@@ -133,11 +143,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        Executors.newCachedThreadPool();
+        List<Integer> list = new LinkedList<>();
+        int a = 0;
+        list.add(a);
 
         findViewById(R.id.btn_unbind).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                unbindService();
+                Intent intent = new Intent(MainActivity.this, WebViewActivitiy.class);
+                startActivity(intent);
+                Log.i(TAG,"tn_unbind");
+              //  unbindService();
             }
         });
 
@@ -157,12 +174,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         testRxJava();
         testOkhttp();
         testRxJavaPost();
       //  Debug.stopMethodTracing();
+
     }
 
+
+
+    public void test_is(){
+        StringBuilder sb = new StringBuilder();
+       // sb.toString().substring().e
+        InputStream inputStream;
+        try {
+            inputStream = getAssets().open("IMG_20181126_055722.gif");
+            int code = -1;
+            int index = 100;
+            while ((index-- >0)&&(code = inputStream.read()) != -1) {
+                sb.append((char)code);
+            }
+            Log.i(TAG,"test_is"+sb);
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.i(TAG, "test_is"+e.getMessage());
+        }
+        Log.i(TAG, "test_is return");
+    }
 
     public void writeToExternalStorage() {
         File externalStorage = Environment.getExternalStorageDirectory();
@@ -204,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
         unbindService(mScon);
         sBinderCount--;
         Log.i(TAG, "unbindService: count"+sBinderCount);
+
     }
 
 
@@ -340,6 +380,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onNext(Object value) {
                 Log.i(TAG,"countdown"+(String)value+"thread name"+Thread.currentThread().getName());
+                if (is) {
+                    test_is();
+                    is = false;
+                }
             }
 
             @Override
@@ -357,8 +401,10 @@ public class MainActivity extends AppCompatActivity {
         novel.subscribeOn(Schedulers.single()).observeOn(AndroidSchedulers.mainThread()).subscribe(observer);
     }
 
-
+    boolean is = true;
     private void testOkhttp() {
+
+
         Request request  = new Request.Builder().url(" http://www.publicobject.com/helloworld.txt").get().build();
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new LogIntercepter()).build();
         Call call  = client.newCall(request);
@@ -391,6 +437,9 @@ public class MainActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT > 29) {
 
         }
+
+
+
         RequestBody requestBody = new RequestBody() {
             @Nullable
             @Override
